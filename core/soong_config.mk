@@ -167,6 +167,8 @@ $(call add_json_list, ProductHiddenAPIStubsTest,         $(PRODUCT_HIDDENAPI_STU
 
 $(call add_json_list, TargetFSConfigGen,                 $(TARGET_FS_CONFIG_GEN))
 
+$(call add_json_str,  Libart_img_base,                   $(LIBART_IMG_BASE))
+
 $(call add_json_map, VendorVars)
 $(foreach namespace,$(SOONG_CONFIG_NAMESPACES),\
   $(call add_json_map, $(namespace))\
