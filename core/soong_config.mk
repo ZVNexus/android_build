@@ -170,6 +170,7 @@ $(call add_json_list, TargetFSConfigGen,                 $(TARGET_FS_CONFIG_GEN)
 $(call add_json_str,  Libart_img_base,                   $(LIBART_IMG_BASE))
 $(call add_json_bool, BoardUsesQTIHardware,              $(filter true,$(BOARD_USES_QTI_HARDWARE)))
 $(call add_json_bool, Needs_text_relocations,            $(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)))
+$(call add_json_bool, Needs_prelink_support,             $(filter true,$(TARGET_NEEDS_PRELINK_SUPPORT)))
 
 $(call add_json_map, VendorVars)
 $(foreach namespace,$(SOONG_CONFIG_NAMESPACES),\
