@@ -898,6 +898,9 @@ $(foreach group,$(call to-upper,$(BOARD_SUPER_PARTITION_GROUPS)), \
 )
 endif # PRODUCT_BUILD_SUPER_PARTITION
 
+# Rules for QCOM targets
+include vendor/extras/build/core/qcom_target.mk
+
 # BOARD_*_PARTITION_LIST: a list of the following tokens
 valid_super_partition_list := system vendor product product_services odm
 $(foreach group,$(call to-upper,$(BOARD_SUPER_PARTITION_GROUPS)), \
@@ -1179,9 +1182,3 @@ DEFAULT_DATA_OUT_MODULES := ltp $(ltp_packages) $(kselftest_modules)
 .KATI_READONLY := DEFAULT_DATA_OUT_MODULES
 
 include $(BUILD_SYSTEM)/dumpvar.mk
-
-# QCOM targets and pathmap
-ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include $(TOPDIR)vendor/extras/build/core/pathmap.mk
-include $(TOPDIR)vendor/extras/build/core/qcom_target.mk
-endif
